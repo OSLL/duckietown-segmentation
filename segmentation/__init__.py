@@ -1,8 +1,5 @@
-from segmentation import utils as utils
-import segmentation.utils
-from segmentation import EDANet as EDANet
-import segmentation.EDANet.EDANet_arch
-from segmentation import UNet as UNet
-import segmentation.UNet.UNet_arch
-from segmentation import DABNet as DABNet
-import segmentation.DABNet.DABNet_arch
+from .EDANet_arch import load_EDANet_model
+from .DABNet_arch import load_DABNet_model
+from .UNet_arch import load_UNet_model
+from .netsWrappers import *
+from .utils import *

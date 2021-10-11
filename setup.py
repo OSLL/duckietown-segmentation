@@ -10,7 +10,7 @@ install_requires = [
 
 setup(
     name='segmentation',
-    packages=find_packages(include=['segmentation']),
+    packages=['segmentation'],
     install_requires = install_requires,
     version='0.1.0',
     description='Duckietown segmentation library',
