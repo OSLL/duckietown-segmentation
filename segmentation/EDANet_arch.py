@@ -1,7 +1,7 @@
 import torch.nn as nn
 import torch
 import torch.nn.functional as F
-from segmentation import load_checkpoint
+from .utils import load_checkpoint
 NUM_CLASSES=4
 
 class DownsamplerBlock(nn.Module):

@@ -1,9 +1,9 @@
 import albumentations as A
 from albumentations.pytorch import ToTensorV2
-from segmentation import load_EDANet_model
-from segmentation import load_UNet_model
-from segmentation import load_DABNet_model
-from segmentation import save_predictions_as_two_images, get_predict
+from .EDANet_arch import load_EDANet_model
+from .UNet_arch import load_UNet_model
+from .DABNet_arch import load_DABNet_model
+from .utils import save_predictions_as_two_images, get_predict
 
 
 class EDANetWrapper:
