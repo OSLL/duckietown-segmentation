@@ -20,7 +20,7 @@ python3
 > import albumentations as A
 > from albumentations.pytorch import ToTensorV2
 > from segmentation import *
-> model = load_DABNet_model("./segmentation/dabnetlr=0.0003optim=Adamepoch=39.pth.tar", 4, device='cpu')
+> model = load_DABNet_model("./segmentation/models/dabnetlr=0.0003optim=Adamepoch=39.pth.tar", 4, device='cpu')
 > image = np.random.randint(0, 255, (480, 640, 3))
 > transform = A.Compose(
          [
