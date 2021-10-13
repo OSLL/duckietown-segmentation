@@ -2,12 +2,16 @@
 ```
 pip3 install git+https://github.com/OSLL/duckietown-segmentation.git@main
 ```
-
+or
+```
+git clone https://github.com/OSLL/duckietown-segmentation.git
+cd duckietown-segmentation
+python3 -m pip install .
+```
 # Usage
 ```
 from segmentation import <function_name>
 ```
-
 # Example
 
 ```
