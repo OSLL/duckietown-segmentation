@@ -22,6 +22,7 @@ python3
 > from segmentation import *
 > model = load_DABNet_model("./segmentation/models/dabnetlr=0.0003optim=Adamepoch=39.pth.tar", 4, device='cpu')
 > image = np.random.randint(0, 255, (480, 640, 3))
+> image_r = image.copy()
 > transform = A.Compose(
          [
              ToTensorV2(),
