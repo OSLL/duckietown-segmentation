@@ -245,7 +245,7 @@ def get_predict(
     device="cpu"
 ):
     model.eval()
-    print(f"Get preds {idx}") 
+    #print(f"Get preds {idx}") 
     x = image_to_change.to(device=device)
     x = torch.unsqueeze(x, 0)
     with torch.no_grad():
@@ -259,7 +259,7 @@ def get_predict_with_time(
     device="cuda"
 ):
     model.eval()
-    print(f"Get preds {idx}") 
+    #print(f"Get preds {idx}") 
     x = image_to_change.to(device=device)
     x = torch.unsqueeze(x, 0)
     with torch.autograd.profiler.profile(use_cuda=False) as prof1:
