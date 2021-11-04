@@ -177,6 +177,6 @@ class DABNet(nn.Module):
 
 
 def load_DABNet_model(checkpoint_filename, classes=NUM_CLASSES, device="cpu"):     
-    model = DABNet(classes).to(device)
-    load_checkpoint(checkpoint_filename, model)
+    model = DABNet(int(classes)).to(str(device))
+    load_checkpoint(str(checkpoint_filename), model)
     return model

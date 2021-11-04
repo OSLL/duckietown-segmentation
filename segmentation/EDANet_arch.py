@@ -138,6 +138,6 @@ class EDANet(nn.Module):
         return output
 
 def load_EDANet_model(checkpoint_filename, classes=NUM_CLASSES, device="cpu"):     
-    model = EDANet(classes).to(device)
-    load_checkpoint(checkpoint_filename, model)
+    model = EDANet(int(classes)).to(str(device))
+    load_checkpoint(str(checkpoint_filename), model)
     return model

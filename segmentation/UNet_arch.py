@@ -100,6 +100,6 @@ class UNet(nn.Module):
         return outputs        
 
 def load_UNet_model(checkpoint_filename, classes=NUM_CLASSES, device="cpu"):     
-    model = UNet(classes).to(device)
-    load_checkpoint(checkpoint_filename, model)
+    model = UNet(int(classes)).to(str(device))
+    load_checkpoint(str(checkpoint_filename), model)
     return model        
