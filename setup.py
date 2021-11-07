@@ -14,5 +14,6 @@ setup(
     install_requires = install_requires,
     version='0.1.1',
     description='Duckietown segmentation library',
+    include_package_data=True,
     author='Valentina-Gol',
 )
