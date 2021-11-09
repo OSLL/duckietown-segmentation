@@ -319,7 +319,19 @@ def save_preds_image_from_tensor(tenz, idx, folder, width, height):
             #    image[i][j] = [102, 114, 232]      
     image = Image.fromarray(image, 'RGB')
     save_path = os.path.join(folder, f"result{idx}.jpeg")
-    image.save(save_path)      
+    image.save(save_path) 
+    
+def simple_save_preds_image_from_tensor(preds, idx=0, folder="./result1", save_flag=False):
+    image = np.dstack([preds[0], preds[0], preds[0]])
+    image = (image * 100 % 255).astype(np.uint8)
+    if save_flag:
+        image = Image.fromarray(image, 'RGB')
+        if not os.path.exists(folder):
+            os.makedirs(folder) 
+        save_path = os.path.join(folder, f"result{idx}.png")
+        image.save(save_path)      
+        image = np.array(image)
+    return image     
  
 def save_predictions_as_two_images(
     idx, preds, r_image, model, 
