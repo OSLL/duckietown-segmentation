@@ -15,5 +15,6 @@ setup(
     include_package_data=True,
     version='0.1.1',
     description='Duckietown segmentation library',
+    include_package_data=True,
     author='Valentina-Gol',
 )
