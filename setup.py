@@ -12,7 +12,6 @@ setup(
     name='segmentation',
     packages=['segmentation'],
     install_requires = install_requires,
-    include_package_data=True,
     version='0.1.1',
     description='Duckietown segmentation library',
     include_package_data=True,
