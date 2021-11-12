@@ -269,6 +269,23 @@ def get_predict_with_time(
     time = prof1.self_cpu_time_total/1000 
     print("original model: {:.2f}ms".format(time))
     return preds, time
+    
+def get_predict_img_with_time(
+    idx, image_to_change, model, 
+    device="cuda"
+):
+
+    model.eval()
+    x = image_to_change.to(device=device)
+    x = torch.unsqueeze(x, 0)
+    with torch.autograd.profiler.profile(use_cuda=False) as prof1:
+        preds = model(x.float())
+        preds = nn.functional.softmax(preds, dim=1)
+        preds = torch.argmax(preds, dim=1, keepdim=False)
+        preds = simple_save_preds_image_from_tensor(preds)
+    time = prof1.self_cpu_time_total/1000 
+    print("original model: {:.2f}ms".format(time))
+    return preds, time    
         
 #Saving segment picture  
 def save_im(arr, idx, folder, width, height):
