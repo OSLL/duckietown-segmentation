@@ -31,6 +31,7 @@ class DuckietownTrainDataset(Dataset):
             #2 - yellow - [markup]
             #3 - red - [crossroads]
             #4 - lilac -[duck]  
+            #5 - cyan -[duckiebots]  
             mask = np.array(Image.open(mask_path).convert("P"))
             #mask = mask.numpy()
             for i in [0, 1, 2, 3, 4]:
@@ -43,7 +44,9 @@ class DuckietownTrainDataset(Dataset):
                 mask[mask==i] = 3
             #for i in [167, 168, 174, 175, 204, 209, 210, 211]:
             #    mask[mask==i] = 4
-            mask[mask>=4] = 0   
+            #for i in [137, 142, 143, 178, 179]:
+            #    mask[mask==i] = 5
+            #mask[mask>=5] = 0   
             
             image = Image.open(img_path).convert("RGB")
             '''
