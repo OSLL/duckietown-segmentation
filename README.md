@@ -1,12 +1,11 @@
 # Installing
 ```
-pip3 install git+https://github.com/OSLL/duckietown-segmentation.git@seg1
+pip3 install git+https://github.com/OSLL/duckietown-segmentation.git@main
 ```
 or
 ```
 git clone https://github.com/OSLL/duckietown-segmentation.git
 cd duckietown-segmentation
-git checkout seg1
 python3 -m pip install .
 git-lfs pull
 ```
